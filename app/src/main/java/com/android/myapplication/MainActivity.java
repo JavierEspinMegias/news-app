@@ -2,15 +2,11 @@ package com.android.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -49,8 +45,8 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterfa
                         Fragment3 frag3 = Fragment3.newInstance(getSavedId());
                         loadFragment(frag3);
                         break;
-                    case R.id.action_navi:
-                        Fragment4 frag4 = Fragment4.newInstance(getSavedId());
+                    case R.id.action_profile:
+                        FragProfile frag4 = FragProfile.newInstance(getSavedId());
                         loadFragment(frag4);
                         break;
                     case R.id.action_settings:

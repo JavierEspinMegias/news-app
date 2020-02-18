@@ -33,4 +33,6 @@
     <string name="kilometers">kilometers</string>
     <string name="chose_location">Mark the meeting point</string>
     <string name="chose_address">Type address or choose a map location</string>
+    <string name="menu_profile">Profile</string>
+    <string name="modify_user">Send changes</string>
 </resources>
