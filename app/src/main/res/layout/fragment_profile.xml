@@ -2,25 +2,24 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".FragProfile">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_gravity="center"
             android:gravity="center"
             android:background="@drawable/common_google_signin_btn_icon_light_normal_background">
 
             <ImageView
-                android:layout_width="166dp"
-                android:layout_height="166dp"
-                android:layout_marginBottom="16dp"
+                android:layout_width="132dp"
+                android:layout_height="102dp"
+                android:layout_margin="16dp"
+                android:padding="16dp"
+                android:background="@android:drawable/editbox_background_normal"
                 android:src="@drawable/ic_no_profile_image">
 
             </ImageView>
@@ -28,12 +27,11 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_email"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email"
+                    style="@style/EditTextMaterial"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/email"
@@ -45,11 +43,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    style="@style/EditTextMaterial"
                     android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -63,11 +60,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_pass"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    style="@style/EditTextMaterial"
                     android:id="@+id/pass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -80,11 +76,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_pass2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    style="@style/EditTextMaterial"
                     android:id="@+id/pass2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,11 +91,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_city"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    style="@style/EditTextMaterial"
                     android:id="@+id/city"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -112,11 +106,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_phone"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp">
+                android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    style="@style/EditTextMaterial"
                     android:id="@+id/phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -129,13 +122,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="22dp"
+                android:layout_marginTop="12dp"
                 android:text="@string/choose_sex"></TextView>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@android:drawable/editbox_background_normal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -146,7 +140,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:switchMinWidth="52dp"
-                    android:padding="22dp">
+                    android:padding="12dp">
                 </Switch>
                 <TextView
                     android:layout_width="wrap_content"
@@ -157,9 +151,10 @@
 
             <Button
                 android:id="@+id/send_changes"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/modify_user"/>
+                android:text="@string/modify_user"
+                android:layout_margin="12dp"/>
 
 
 

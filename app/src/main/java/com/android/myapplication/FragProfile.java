@@ -33,7 +33,7 @@ public class FragProfile extends Fragment {
     private TextInputEditText name, email, password, pass2, city, phone;
     private ImageView profile_image;
     private Button sendChanges;
-    private Switch isMan;
+    private Switch isWoman;
 
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
     public DatabaseReference reference = database.getReference();
@@ -69,8 +69,7 @@ public class FragProfile extends Fragment {
         pass2 = (TextInputEditText) v.findViewById(R.id.pass2);
         phone = (TextInputEditText) v.findViewById(R.id.phone);
         city = (TextInputEditText) v.findViewById(R.id.city);
-        isMan = (Switch)v.findViewById(R.id.switch_sex);
-
+        isWoman = (Switch)v.findViewById(R.id.switch_sex);
         sendChanges = (Button)v.findViewById(R.id.send_changes);
 
 
@@ -84,7 +83,7 @@ public class FragProfile extends Fragment {
                 pass2.setText(myUser.getPass());
                 phone.setText(myUser.getPhone());
                 city.setText(myUser.getCity());
-                isMan.setSelected(!myUser.isMan);
+                isWoman.setSelected(myUser.isWoman);
             }
 
             @Override
@@ -105,7 +104,7 @@ public class FragProfile extends Fragment {
                         phone.getText().toString(),
                         "",
                         true,
-                        true);
+                        isWoman.isChecked());
                 reference.child("users").child(mParam1).setValue(myNewUser);
                 Toast.makeText(getContext(), R.string.user_modified, Toast.LENGTH_SHORT).show();
             }

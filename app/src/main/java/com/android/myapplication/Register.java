@@ -39,7 +39,7 @@ public class Register extends AppCompatActivity {
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
     public DatabaseReference reference = database.getReference();
     public DatabaseReference newRef = database.getReference();
-    public Switch isMan;
+    public Switch isWoman;
 
 
     @Override
@@ -53,7 +53,7 @@ public class Register extends AppCompatActivity {
         name = (EditText) findViewById(R.id.name);
         phone = (EditText) findViewById(R.id.phone);
         city = (EditText) findViewById(R.id.city);
-        isMan = (Switch)findViewById(R.id.switch_sex);
+        isWoman = (Switch)findViewById(R.id.switch_sex);
     }
 
 
@@ -79,7 +79,7 @@ public class Register extends AppCompatActivity {
                             if (isValidName(pName)) {
                                 if (isValidPhoneNumber(pPhone)) {
                                     if (!pCity.isEmpty()) {
-                                        CasualUser newUser = new CasualUser("",pEmail,pPass,pName,pCity,pPhone,null, true, !isMan.isSelected());
+                                        CasualUser newUser = new CasualUser("",pEmail,pPass,pName,pCity,pPhone,null, true, isWoman.isChecked());
                                         newRef = reference.child("users").push();
                                         String id = newRef.getKey();
                                         newUser.setId(id);
