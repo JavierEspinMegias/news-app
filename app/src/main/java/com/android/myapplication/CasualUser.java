@@ -3,9 +3,9 @@ package com.android.myapplication;
 
 public class CasualUser {
     String id, email, pass, name, city, phone, photo;
-    boolean isActive;
+    boolean isActive, isMan;
 
-    public CasualUser(String id, String email, String pass, String name, String city, String phone, String photo, boolean isActive) {
+    public CasualUser(String id, String email, String pass, String name, String city, String phone, String photo, boolean isActive, boolean isMan) {
         this.id = id;
         this.email = email;
         this.pass = pass;
@@ -14,6 +14,7 @@ public class CasualUser {
         this.phone = phone;
         this.photo = photo;
         this.isActive = isActive;
+        this.isMan = isMan;
     }
 
     public CasualUser() {
@@ -25,6 +26,15 @@ public class CasualUser {
         this.phone = "";
         this.photo = "";
         this.isActive = true;
+        this.isMan = true;
+    }
+
+    public boolean isMan() {
+        return isMan;
+    }
+
+    public void setMan(boolean man) {
+        isMan = man;
     }
 
     public String getId() {

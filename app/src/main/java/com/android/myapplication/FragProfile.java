@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -32,6 +33,7 @@ public class FragProfile extends Fragment {
     private TextInputEditText name, email, password, pass2, city, phone;
     private ImageView profile_image;
     private Button sendChanges;
+    private Switch isMan;
 
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
     public DatabaseReference reference = database.getReference();
@@ -67,7 +69,7 @@ public class FragProfile extends Fragment {
         pass2 = (TextInputEditText) v.findViewById(R.id.pass2);
         phone = (TextInputEditText) v.findViewById(R.id.phone);
         city = (TextInputEditText) v.findViewById(R.id.city);
-
+        isMan = (Switch)v.findViewById(R.id.switch_sex);
 
         sendChanges = (Button)v.findViewById(R.id.send_changes);
 
@@ -82,6 +84,7 @@ public class FragProfile extends Fragment {
                 pass2.setText(myUser.getPass());
                 phone.setText(myUser.getPhone());
                 city.setText(myUser.getCity());
+                isMan.setSelected(!myUser.isMan);
             }
 
             @Override
@@ -101,6 +104,7 @@ public class FragProfile extends Fragment {
                         city.getText().toString(),
                         phone.getText().toString(),
                         "",
+                        true,
                         true);
                 reference.child("users").child(mParam1).setValue(myNewUser);
                 Toast.makeText(getContext(), R.string.user_modified, Toast.LENGTH_SHORT).show();
