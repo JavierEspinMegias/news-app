@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,28 +27,24 @@ import com.google.firebase.database.ValueEventListener;
 public class FragProfile extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
+    private static final String USER_ID = "user_id";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private TextInputEditText name, email, password, pass2, city, phone;
-    private ImageView profile_image;
     private Button sendChanges;
-    private Switch isWoman;
+    private SwitchMaterial isWoman;
 
     public FirebaseDatabase database = FirebaseDatabase.getInstance();
     public DatabaseReference reference = database.getReference();
-
     private OnFragmentInterfaceCom mListener;
-
-    public FragProfile() {
-    }
+    public FragProfile(){}
 
 
-    public static FragProfile newInstance(String param1) {
+    public static FragProfile newInstance(String userId) {
         FragProfile fragment = new FragProfile();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
+        args.putString(USER_ID, userId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -56,7 +53,7 @@ public class FragProfile extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam1 = getArguments().getString(USER_ID);
         }
     }
 
@@ -69,7 +66,7 @@ public class FragProfile extends Fragment {
         pass2 = (TextInputEditText) v.findViewById(R.id.pass2);
         phone = (TextInputEditText) v.findViewById(R.id.phone);
         city = (TextInputEditText) v.findViewById(R.id.city);
-        isWoman = (Switch)v.findViewById(R.id.switch_sex);
+        isWoman = (SwitchMaterial)v.findViewById(R.id.switch_sex);
         sendChanges = (Button)v.findViewById(R.id.send_changes);
 
 

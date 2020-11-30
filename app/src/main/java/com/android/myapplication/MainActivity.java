@@ -4,61 +4,95 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.checkbox.MaterialCheckBox;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity implements OnFragmentInterfaceCom {
 
-    private BottomNavigationView menuBottom;
+    private CustomBottomNavigationView menuBottom;
+    private FloatingActionButton fabSearch;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
 
-        menuBottom = (BottomNavigationView)findViewById(R.id.bottom_navigation);
+        BottomNavigationItemView itemInvi = (BottomNavigationItemView)findViewById(R.id.action_search);
+        itemInvi.setVisibility(View.INVISIBLE);
+        itemInvi.setClickable(false);
+
+        fabSearch = (FloatingActionButton)findViewById(R.id.fab_search);
+        fabSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragSearchMeets fragSearchMeets = FragSearchMeets.newInstanceData(getSavedId());
+                loadFragment(fragSearchMeets);
+            }
+        });
+
+        menuBottom = (CustomBottomNavigationView)findViewById(R.id.customBottomBar);
         menuBottom.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.action_search:
-                        FragSearchMeets frag = FragSearchMeets.newInstanceData(getSavedId());
-                        loadFragment(frag);
-                        break;
                     case R.id.action_add:
-                        FragAddMeet frag2 = FragAddMeet.newInstance(getSavedId());
-                        loadFragment(frag2);
+                        FragAddMeet fragAdd = FragAddMeet.newInstance(getSavedId());
+                        loadFragment(fragAdd);
                         break;
-                    case R.id.action_camera:
-                        Fragment3 frag3 = Fragment3.newInstance(getSavedId());
-                        loadFragment(frag3);
+                    case R.id.action_news:
+                        FragNews fragNews = FragNews.newInstance(getSavedId());
+                        loadFragment(fragNews);
                         break;
                     case R.id.action_profile:
-                        FragProfile frag4 = FragProfile.newInstance(getSavedId());
-                        loadFragment(frag4);
+                        FragAccount fragAcc = FragAccount.newInstance(getSavedId());
+                        loadFragment(fragAcc);
                         break;
                     case R.id.action_settings:
-                        FragSettings frag_settings = FragSettings.newInstance(getSavedId());
-                        loadFragment(frag_settings);
+                        FragSettings fragSettings = FragSettings.newInstance(getSavedId());
+                        loadFragment(fragSettings);
                         break;
                 }
                 return true;
             }
         });
 
+
+
     }
+
+
 
     public void loadFragment(Fragment frag){
         getSupportFragmentManager().beginTransaction()
@@ -91,7 +125,6 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterfa
         }
     }
 
-
     public String getSavedId(){
         SharedPreferences prefs = this.getSharedPreferences("data", Context.MODE_PRIVATE);
         String id = prefs.getString("user_id", "");
@@ -103,4 +136,7 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterfa
             return "";
         }
     }
+
 }
+
+

@@ -1,15 +1,11 @@
 package com.android.myapplication;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
@@ -21,11 +17,10 @@ import android.widget.Switch;
 
 public class FragSettings extends Fragment {
 
-    private static final String ARG_PARAM1 = "param1";
+    private static final String USER_ID = "user_id";
 
 
-    private String mParam1;
-    private String mParam2;
+    private String userId;
 
     private OnFragmentInterfaceCom mListener;
 
@@ -37,10 +32,10 @@ public class FragSettings extends Fragment {
 
 
     // TODO: Rename and change types and number of parameters
-    public static FragSettings newInstance(String param1) {
+    public static FragSettings newInstance(String userId) {
         FragSettings fragment = new FragSettings();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
+        args.putString(USER_ID, userId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -49,13 +44,13 @@ public class FragSettings extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
+            userId = getArguments().getString(USER_ID);
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View v = inflater.inflate(R.layout.fragment_fragment5, container, false);
+        final View v = inflater.inflate(R.layout.fragment_settings, container, false);
 
         dayNight = (Switch)v.findViewById(R.id.switchDay);
         checkDayNight(v);

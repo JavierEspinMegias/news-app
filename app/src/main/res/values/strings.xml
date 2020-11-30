@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SocialRider</string>
+    <string name="app_name">news app</string>
 
     <string name="menu_search">Search</string>
     <string name="menu_settings">Settings</string>
@@ -29,12 +29,45 @@
     <string name="enduro">Enduro</string>
     <string name="speed_ride">Speed</string>
     <string name="travel">Travel</string>
-    <string name="distance">Distance</string>
+    <string name="distance">Estimated ride distance</string>
     <string name="kilometers">kilometers</string>
     <string name="chose_location">Mark the meeting point</string>
-    <string name="chose_address">Type address or choose a map location</string>
+    <string name="chose_address">Type address or clic map</string>
     <string name="menu_profile">Profile</string>
     <string name="modify_user">Send changes</string>
     <string name="user_modified">User modified!</string>
     <string name="choose_sex">Choose your sex</string>
+    <string name="select_date">Select a date to meet</string>
+    <string name="hours">hours</string>
+    <string name="estimated_hours">Estimated duration</string>
+    <string name="meet_descript">Insert a description</string>
+
+    <string name="my_account">My account</string>
+    <string name="my_motos">My motos</string>
+    <string name="my_contacts">Contacts</string>
+    <string name="my_rides">Total rides</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="need_type">Need a ride type</string>
+    <string name="need_desciption">Need better description</string>
+    <string name="no_motos_registered">You don\'t have motos registered</string>
+    <string name="add_new_moto">Add new moto</string>
+    <string name="no_info">No info</string>
+    <string name="moto_name">Moto name:</string>
+    <string name="moto_model">Model:</string>
+    <string name="moto_power">Power:</string>
+    <string name="moto_type">Type:</string>
+    <string name="send">Send</string>
+    <string name="need_name">Need a name</string>
+    <string name="need_model">Need a model</string>
+    <string name="need_power">Need the power</string>
+    <string name="select_hour">Select hour</string>
+    <string name="select_point">Pick a starting point</string>
+    <string name="news_country">Country:</string>
+    <string name="news_date">Date:</string>
+    <string name="news_circuit">Circuit:</string>
+    <string name="news_city">City:</string>
+    <string name="next_events">Next events</string>
+    <string name="menu_news">News</string>
 </resources>

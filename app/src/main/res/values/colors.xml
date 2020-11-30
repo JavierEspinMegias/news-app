@@ -3,5 +3,12 @@
     <color name="colorPrimary">#F44336</color>
     <color name="colorPrimaryDark">#292929</color>
     <color name="colorAccent">#009688</color>
-    <color name="colorPrimaryLight">#E76764</color>
+    <color name="colorPrimaryLight">#ECECEC</color>
+
+    <color name="colorPrimaryWhite">#FFFFFF</color>
+
+    <color name="colorEnduro">#43A047</color>
+    <color name="colorTravel">#E53935</color>
+    <color name="colorSpeed">#FFA200</color>
+    <color name="colorCasual">#00ACC1</color>
 </resources>

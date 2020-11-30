@@ -9,4 +9,13 @@
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
+    <style name="EditTextMaterial" >
+        <item name="android:layout_margin">16dp</item>
+    </style>
+
+
+    <style name="buttonGeneral" >
+        <item name="android:elevation">16dp</item>
+    </style>
+
 </resources>

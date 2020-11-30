@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/action_search"
-        android:title="@string/menu_search"
-        android:icon="@android:drawable/ic_menu_search"/>
+    <item android:id="@+id/action_news"
+        android:title="@string/menu_news"
+        android:icon="@drawable/ic_news" />
     <item android:id="@+id/action_add"
         android:title="@string/menu_add"
-        android:icon="@android:drawable/ic_menu_add" />
-    <item android:id="@+id/action_camera"
-        android:title="@string/menu_camera"
-        android:icon="@android:drawable/ic_menu_camera" />
+        android:icon="@drawable/ic_ad" />
+    <item android:id="@+id/action_search"
+        android:title=""/>
     <item android:id="@+id/action_profile"
         android:title="@string/menu_profile"
-        android:icon="@android:drawable/ic_menu_agenda" />
+        android:icon="@drawable/ic_no_profile_image" />
     <item android:id="@+id/action_settings"
         android:title="@string/menu_settings"
-        android:icon="@android:drawable/ic_menu_preferences" />
+        android:icon="@drawable/ic_settings"/>
 </menu>

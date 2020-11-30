@@ -1,21 +1,18 @@
 package com.android.myapplication;
 
-public class CasualMeet {
-    String main_user, day, hour_start, hour_end, ride_type, latitude_start, longitude_start, latitude_end, longitude_end;
+import java.io.Serializable;
+
+public class CasualMeet implements Serializable {
+    String id, main_user, day, hour_start, hour_end, ride_type, latitude_start, longitude_start, latitude_end, longitude_end, description;
+    int duration, distance;
 
     public CasualMeet() {
-        this.main_user = "";
-        this.day = "";
-        this.hour_start = "";
-        this.hour_end = "";
-        this.ride_type = "";
-        this.latitude_start = "";
-        this.longitude_start = "";
-        this.latitude_end = "";
-        this.longitude_end = "";
+        this.id = this.main_user = this.day = this.hour_start = this.ride_type = this.latitude_start = this.longitude_start = this.latitude_end = this.longitude_end = this.description ="";
+        this.duration = this.distance = -1;
     }
 
-    public CasualMeet(String main_user, String day, String hour_start, String hour_end, String ride_type, String latitude_start, String longitude_start, String latitude_end, String longitude_end) {
+    public CasualMeet(String id, String main_user, String day, String hour_start, String hour_end, String ride_type, String latitude_start, String longitude_start, String latitude_end, String longitude_end, String description, int duration, int distance) {
+        this.id = id;
         this.main_user = main_user;
         this.day = day;
         this.hour_start = hour_start;
@@ -25,6 +22,41 @@ public class CasualMeet {
         this.longitude_start = longitude_start;
         this.latitude_end = latitude_end;
         this.longitude_end = longitude_end;
+        this.description = description;
+        this.duration = duration;
+        this.distance = distance;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getMain_user() {
