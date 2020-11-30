@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/adapter_linear_layout_item_moto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_meet"
+    android:elevation="18dp"
+    android:orientation="horizontal"
+    android:padding="3dp"
+    android:layout_margin="3dp"
+    android:gravity="center_horizontal">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal|center_vertical">
+
+        <ImageView
+            android:id="@+id/image_view_adapter_moto"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
+            android:src="@android:drawable/ic_menu_add"
+            android:tint="@color/colorCasual" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_name_moto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:text="@string/add_new_moto"
+            android:textSize="22dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/linear_add_moto"
+        android:layout_margin="12dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginRight="6dp"
+                android:tint="@color/colorCasual"
+                android:src="@android:drawable/ic_input_add"></ImageView>
+
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/moto_type"
+                android:layout_marginRight="3dp"
+                android:textSize="18dp" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_moto_type_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginRight="6dp"
+                android:tint="@color/colorCasual"
+                android:src="@android:drawable/ic_input_add"></ImageView>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/moto_model"
+                android:layout_marginRight="3dp"
+                android:textSize="18dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_model_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginRight="6dp"
+                android:tint="@color/colorCasual"
+                android:src="@android:drawable/ic_input_add"></ImageView>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/moto_power"
+                android:layout_marginRight="3dp"
+                android:textSize="18dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_cv_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
